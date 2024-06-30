@@ -3,7 +3,7 @@ import React, { FC } from "react"
 import { BlitzLayout, Routes } from "@blitzjs/next"
 import { Suspense } from "react"
 import { Vertical, Horizontal } from "mantine-layout-components"
-import { AppShell, Navbar, Header, Text, Footer } from "@mantine/core"
+import { AppShell, Navbar, Header, Text, Footer, Anchor } from "@mantine/core"
 import Link from "next/link"
 
 const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
@@ -28,9 +28,15 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
         header={
           <Header height={60} p="xs">
             <Horizontal fullH fullW>
-              <Link href={Routes.Home()} fw="bold">
+              <Anchor
+                component={Link}
+                href={Routes.Home()}
+                fw="bold"
+                underline={false}
+                color="grey"
+              >
                 Eventio
-              </Link>
+              </Anchor>
             </Horizontal>
           </Header>
         }
