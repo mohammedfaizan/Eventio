@@ -1,16 +1,13 @@
-import { Suspense } from "react"
 import Layout from "src/core/layouts/Layout"
 import { BlitzPage } from "@blitzjs/next"
-import { UserInfo } from "src/core/components/UserInfo"
+import { AuthenticationForm } from "src/core/components/MainAuthenticationForm"
+import getCurrentUser from "src/users/queries/getCurrentUser"
+import { useCurrentUser } from "src/users/hooks/useCurrentUser"
 
 const Home: BlitzPage = () => {
-  return (
-    <Layout title="Home">
-      <Suspense fallback="Loading...">
-        <UserInfo />
-      </Suspense>
-    </Layout>
-  )
+  const currentUser = getCurrentUser()
+
+  return <Layout title="Home">{currentUser && <AuthenticationForm />}</Layout>
 }
 
 export default Home

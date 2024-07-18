@@ -3,14 +3,21 @@ import React, { FC } from "react"
 import { BlitzLayout, Routes } from "@blitzjs/next"
 import { Suspense } from "react"
 import { Vertical, Horizontal } from "mantine-layout-components"
-import { AppShell, Navbar, Header, Text, Footer, Anchor } from "@mantine/core"
+import { AppShell, Navbar, Header, Text, Footer, Anchor, Button } from "@mantine/core"
 import Link from "next/link"
+import { useMutation } from "@blitzjs/rpc"
+import logout from "src/auth/mutations/logout"
+import { useCurrentUser } from "src/users/hooks/useCurrentUser"
+import getCurrentUser from "src/users/queries/getCurrentUser"
 
 const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
   title,
   children,
 }) => {
   const thisYear = new Date().getFullYear()
+  const [logoutMutation] = useMutation(logout)
+  const currentUser = getCurrentUser()
+
   return (
     <>
       <Head>
@@ -20,23 +27,33 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
 
       <AppShell
         padding="md"
-        navbar={
-          <Navbar width={{ base: 300 }} height={500} p="xs">
-            {/* Navbar content */}
-          </Navbar>
-        }
         header={
           <Header height={60} p="xs">
-            <Horizontal fullH fullW>
+            <Horizontal fullH fullW spaceBetween>
               <Anchor
                 component={Link}
                 href={Routes.Home()}
                 fw="bold"
                 underline={false}
-                color="grey"
+                color="grey.3"
               >
                 Eventio
               </Anchor>
+
+              {currentUser && (
+                <Horizontal>
+                  <Text>{currentUser.name}</Text>
+                  <Button
+                    size="xs"
+                    variant="light"
+                    onClick={async () => {
+                      await logoutMutation()
+                    }}
+                  >
+                    Logout
+                  </Button>
+                </Horizontal>
+              )}
             </Horizontal>
           </Header>
         }
