@@ -8,8 +8,7 @@
     "studio": "blitz prisma studio --browser none",
     "migrate": "blitz prisma migrate dev",
     "test": "vitest run --passWithNoTests",
-    "test:watch": "vitest",
-    "prepare": "husky install"
+    "test:watch": "vitest"
   },
   "prisma": {
     "schema": "db/schema.prisma"
