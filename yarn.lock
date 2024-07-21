@@ -1393,10 +1393,10 @@
   resolved "https://registry.npmjs.org/@mantine/utils/-/utils-6.0.21.tgz"
   integrity sha512-33RVDRop5jiWFao3HKd3Yp7A9mEq4HAJxJPTuYm1NkdqX6aTKOQK7wT8v8itVodBp+sb4cJK6ZVdD1UurK/txQ==
 
-"@mantinex/dev-icons@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@mantinex/dev-icons/-/dev-icons-1.0.2.tgz#9af8ab6a75b2f245b78299c7c934aa22be98d03d"
-  integrity sha512-wKSOvjqLTQbSf+XAq3BojhkaEwjR1C3L5ShlgE2lN6JnxGcIZeFcwphMf4xqBp9Gl45XhIyKxNGfmija/u/a7A==
+"@mantinex/dev-icons@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@mantinex/dev-icons/-/dev-icons-1.0.1.tgz#2033dfc17a6a01302550a73c379731f0cbf72bb6"
+  integrity sha512-qC6kUYhyTpTcfKNGg9TIkJf1W8JzhsnkFSxR7ibAFdsfXQDGVR1R7plW2Bh3ciQgmp9OhYrCQhTt6gCgu9rAzg==
 
 "@mrleebo/prisma-ast@0.2.6":
   version "0.2.6"
@@ -1755,17 +1755,17 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
-"@tabler/icons-react@3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@tabler/icons-react/-/icons-react-3.7.0.tgz#cee199cec5a5cf463ea5a8a88e10ccb6476e77a1"
-  integrity sha512-8AU4oO9pgLhHLOSGAJIsRhsTy7w8D7uKBlR0DIFxaILFA1fe2rC4wrNGYUtIFei82y41OuXz9vMk0Oe+IWT3SA==
+"@tabler/icons-react@3.10.0":
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons-react/-/icons-react-3.10.0.tgz#5d6f1cd24835244d1b9c8e64a118607cd46e4f06"
+  integrity sha512-FTES0wJLIV+M9Ggng0j/6Kn/j43ZuBukR5n6DNV8Npk4woPCDcRjA+2KzKQyvSdwtPMAM6o1e8fQBPDS337Spg==
   dependencies:
-    "@tabler/icons" "3.7.0"
+    "@tabler/icons" "3.10.0"
 
-"@tabler/icons@3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-3.7.0.tgz#b522723844644b50ccaddd0fd19a91c0eb3095da"
-  integrity sha512-lJGIZLSWrPO6VygRUbaVvQjWgL2EaiBMD8e6leCYUQ8ZPO4LIzKMq358C8KlhXJcyNiRz1Io3YWoc/DNTcWqSg==
+"@tabler/icons@3.10.0":
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-3.10.0.tgz#0ec08c58419c731b71517c7fa76b113774bdb7b8"
+  integrity sha512-jCMO+hDTw8Gn1CNb15zIENLQ9b0UplGXtjMnEUhDoKH+Q4fta8tBLUxZpPpFtpV+q+gzGqfM76xNAoD1GBpmnA==
 
 "@tanstack/query-core@4.24.4":
   version "4.24.4"

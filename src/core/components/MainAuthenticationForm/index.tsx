@@ -78,16 +78,9 @@ export function AuthenticationForm(props: PaperProps) {
 
   return (
     <Paper radius="md" p="xl" withBorder {...props}>
-      <Text size="lg" fw={500}>
+      <Text size="lg" fw={600}>
         Welcome to Eventio, {type} with
       </Text>
-
-      <Group grow mb="md" mt="md">
-        <GoogleButton radius="xl">Google</GoogleButton>
-        <TwitterButton radius="xl">Twitter</TwitterButton>
-      </Group>
-
-      <Divider label="Or continue with email" labelPosition="center" my="lg" />
 
       <form onSubmit={form.onSubmit(onSubmit)}>
         <Stack>

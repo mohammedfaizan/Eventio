@@ -16,7 +16,7 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
 }) => {
   const thisYear = new Date().getFullYear()
   const [logoutMutation] = useMutation(logout)
-  const currentUser = getCurrentUser()
+  //const currentUser = getCurrentUser()
 
   return (
     <>
@@ -40,20 +40,18 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
                 Eventio
               </Anchor>
 
-              {currentUser && (
-                <Horizontal>
-                  <Text>{currentUser.name}</Text>
-                  <Button
-                    size="xs"
-                    variant="light"
-                    onClick={async () => {
-                      await logoutMutation()
-                    }}
-                  >
-                    Logout
-                  </Button>
-                </Horizontal>
-              )}
+              <Horizontal>
+                <Text>Name</Text>
+                <Button
+                  size="xs"
+                  variant="light"
+                  onClick={async () => {
+                    await logoutMutation()
+                  }}
+                >
+                  Logout
+                </Button>
+              </Horizontal>
             </Horizontal>
           </Header>
         }

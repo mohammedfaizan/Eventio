@@ -5,18 +5,18 @@ import { FacebookIcon } from "./icons/FacebookIcon"
 import classes from "./SocialButtons.module.css"
 
 export function GoogleButton(props: ButtonProps & React.ComponentPropsWithoutRef<"button">) {
-  return <Button leftSection={<GoogleIcon />} variant="default" {...props} />
+  return <Button leftIcon={<GoogleIcon />} variant="default" {...props} />
 }
 
 export function FacebookButton(props: ButtonProps & React.ComponentPropsWithoutRef<"button">) {
-  return <Button leftSection={<FacebookIcon />} className={classes.facebookButton} {...props} />
+  return <Button leftIcon={<FacebookIcon />} className={classes.facebookButton} {...props} />
 }
 
 export function DiscordButton(props: ButtonProps & React.ComponentPropsWithoutRef<"button">) {
   return (
     <Button
       className={classes.discordButton}
-      leftSection={<DiscordIcon style={{ width: "1rem", height: "1rem" }} />}
+      leftIcon={<DiscordIcon width="1rem" height="1rem" />}
       {...props}
     />
   )
@@ -27,7 +27,7 @@ export function TwitterButton(props: ButtonProps & React.ComponentPropsWithoutRe
   return (
     <Button
       component="a"
-      leftSection={<TwitterIcon style={{ width: "1rem", height: "1rem" }} color="#00ACEE" />}
+      leftIcon={<TwitterIcon width="1rem" height="1rem" color="#00ACEE" />}
       variant="default"
       {...props}
     />
@@ -38,7 +38,7 @@ export function GithubButton(props: ButtonProps & React.ComponentPropsWithoutRef
   return (
     <Button
       {...props}
-      leftSection={<GithubIcon style={{ width: "1rem", height: "1rem" }} />}
+      leftIcon={<GithubIcon width="1rem" height="1rem" />}
       className={classes.githubButton}
     />
   )
@@ -46,7 +46,7 @@ export function GithubButton(props: ButtonProps & React.ComponentPropsWithoutRef
 
 export function SocialButtons() {
   return (
-    <Group justify="center" p="md">
+    <Group position="center" p="md">
       <GoogleButton>Continue with Google</GoogleButton>
       <TwitterButton href="https://twitter.com/mantinedev" target="_blank">
         Follow on Twitter

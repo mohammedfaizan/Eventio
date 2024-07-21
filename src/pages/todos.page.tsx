@@ -30,7 +30,7 @@ const Todo = ({ todo }) => {
 }
 
 const Todos = () => {
-  const user = getCurrentUser()
+  //const user = useCurrentUser()
   const [todos] = useQuery(getTodos, {})
 
   const [todoTitle, setTodoTitle] = useState("")
@@ -40,7 +40,7 @@ const Todos = () => {
 
   return (
     <Vertical>
-      {user && <Text>Hello {user.name}, here are your todos:</Text>}
+      <Text>Hello username, here are your todos:</Text>
       <Input
         placeholder="Enter todo title"
         value={todoTitle}
