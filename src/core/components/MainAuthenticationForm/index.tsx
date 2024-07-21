@@ -13,8 +13,8 @@ import {
   Anchor,
   Stack,
 } from "@mantine/core"
-import { GoogleButton } from "./SocialButtons"
-import { TwitterButton } from "./SocialButtons"
+//import { GoogleButton } from "./SocialButtons"
+//import { TwitterButton } from "./SocialButtons"
 import { useMutation } from "@blitzjs/rpc"
 import login from "src/auth/mutations/login"
 import signup from "src/auth/mutations/signup"
