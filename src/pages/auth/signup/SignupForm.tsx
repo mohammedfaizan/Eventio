@@ -1,7 +1,6 @@
 import { LabeledTextField } from "src/core/components/LabeledTextField"
 import { Form, FORM_ERROR } from "src/core/components/Form"
 import signup from "src/auth/mutations/signup"
-import { Signup } from "src/auth/schemas"
 import { useMutation } from "@blitzjs/rpc"
 import { useForm } from "@mantine/form"
 import { Vertical } from "mantine-layout-components"
