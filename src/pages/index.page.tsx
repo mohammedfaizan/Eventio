@@ -5,7 +5,7 @@ import { useCurrentUser } from "src/users/hooks/useCurrentUser"
 import getCurrentUser from "src/users/queries/getCurrentUser"
 
 const Home: BlitzPage = () => {
-  const currentUser = getCurrentUser()
+  const currentUser = useCurrentUser()
 
   return <Layout title="Home">{currentUser && <AuthenticationForm />}</Layout>
 }
