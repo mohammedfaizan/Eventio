@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react"
+import React, { useState } from "react"
 import { Horizontal, Vertical } from "mantine-layout-components"
 import { BlitzPage } from "@blitzjs/next"
 import Layout from "src/core/layouts/Layout"
@@ -12,12 +12,13 @@ import getCurrentUser from "src/users/queries/getCurrentUser"
 import toggleTodo from "src/auth/mutations/toggleTodo"
 import cleanCompleted from "src/auth/mutations/cleanCompleted"
 import { ReactFC } from "mantine-layout-components/dist/types"
-import { PromiseReturnType } from "blitz"
-
-type TodoType = PromiseReturnType<typeof getTodos>
 
 const Todo: ReactFC<{
-  todo: TodoType
+  todo: {
+    done: boolean
+    id: string
+    title: string
+  }
 }> = ({ todo }) => {
   const [$toggleTodo] = useMutation(toggleTodo)
   return (
@@ -77,9 +78,7 @@ const Todos = () => {
 export const TodosPage: BlitzPage = () => {
   return (
     <Layout>
-      <Suspense fallback={<Text>Loading...</Text>}>
-        <Todos />
-      </Suspense>
+      <Todos />
     </Layout>
   )
 }
