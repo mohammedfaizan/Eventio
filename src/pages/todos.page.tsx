@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { Suspense, useState } from "react"
 import { Horizontal, Vertical } from "mantine-layout-components"
 import { BlitzPage } from "@blitzjs/next"
 import Layout from "src/core/layouts/Layout"
@@ -11,8 +11,14 @@ import { useCurrentUser } from "src/users/hooks/useCurrentUser"
 import getCurrentUser from "src/users/queries/getCurrentUser"
 import toggleTodo from "src/auth/mutations/toggleTodo"
 import cleanCompleted from "src/auth/mutations/cleanCompleted"
+import { ReactFC } from "mantine-layout-components/dist/types"
+import { PromiseReturnType } from "blitz"
 
-const Todo = ({ todo }) => {
+type TodoType = PromiseReturnType<typeof getTodos>
+
+const Todo: ReactFC<{
+  todo: TodoType
+}> = ({ todo }) => {
   const [$toggleTodo] = useMutation(toggleTodo)
   return (
     <Horizontal>
@@ -30,7 +36,7 @@ const Todo = ({ todo }) => {
 }
 
 const Todos = () => {
-  //const user = useCurrentUser()
+  const user = useCurrentUser()
   const [todos] = useQuery(getTodos, {})
 
   const [todoTitle, setTodoTitle] = useState("")
@@ -39,8 +45,8 @@ const Todos = () => {
   const [$cleanCompleted] = useMutation(cleanCompleted, {})
 
   return (
-    <Vertical>
-      <Text>Hello username, here are your todos:</Text>
+    <Vertical fullH fullW center>
+      <Text>Hello {user.name}, here are your todos:</Text>
       <Input
         placeholder="Enter todo title"
         value={todoTitle}
@@ -71,7 +77,9 @@ const Todos = () => {
 export const TodosPage: BlitzPage = () => {
   return (
     <Layout>
-      <Todos />
+      <Suspense fallback={<Text>Loading...</Text>}>
+        <Todos />
+      </Suspense>
     </Layout>
   )
 }
